@@ -1,0 +1,65 @@
+.formContainer {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.inputField {
+  width: calc(100% - 12px);
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.radioGroup {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.radioLabel {
+  margin-right: 15px;
+}
+
+.checkboxGroup {
+  margin-top: 5px;
+}
+
+.checkboxLabel {
+  margin-right: 15px;
+}
+
+.fileLabel {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,55 @@
+.dashboard {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    color: #007bff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    background-color: #e2e6ea;
+  }
+  
+  .user {
+    margin-left: auto;
+    font-weight: bold;
+  }
+  
+  .main {
+    padding: 20px;
+  }
+  
+  .welcome {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .welcome h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .welcome p {
+    font-size: 18px;
+    color: #555;
+  }
+  
