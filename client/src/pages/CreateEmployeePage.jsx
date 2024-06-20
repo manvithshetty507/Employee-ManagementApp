@@ -119,13 +119,6 @@ function CreateEmployeePage() {
   );
 }
 
-// Function to toggle checkbox values
-function toggleCheckbox(currentState, value) {
-  if (currentState.includes(value)) {
-    return currentState.filter(item => item !== value);
-  } else {
-    return [...currentState, value];
-  }
-}
+
 
 export default CreateEmployeePage;

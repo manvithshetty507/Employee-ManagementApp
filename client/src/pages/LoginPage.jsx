@@ -10,11 +10,15 @@ function LoginPage({ user, setUser }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("user", user)
-    if (user && user.username) {
+    console.log("user", user);
+    const storedUser = window.localStorage.getItem("user");
+    if (user?.username || storedUser) {
+      if (!user && storedUser) {
+        setUser(JSON.parse(storedUser));
+      }
       navigate('/dashboard');
     }
-  }, [user?.username, navigate]);
+  }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +34,7 @@ function LoginPage({ user, setUser }) {
       console.log("Response:", response.data);
       if (response.status === 200) {
         console.log("Login SUCCESS");
+        window.localStorage.setItem("user", JSON.stringify({ username, password }));
         setError('');
         setUser({ username, password }); 
         setUsername('');

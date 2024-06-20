@@ -9,9 +9,14 @@ function Header({ user, setUser }) {
   const handleLogout = () => {
     // Implement logout functionality here
     setUser({username:'',password:''});
+    window.localStorage.removeItem("user")
   };
 
   useEffect(() => {
+    const storedUser = window.localStorage.getItem("user");
+    if(storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
     if (user && !user.username) {
       navigate('/');
     }

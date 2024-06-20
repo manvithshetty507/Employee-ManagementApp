@@ -21,7 +21,8 @@ function EditEmployeePage() {
               mobile: employee.mobile || '',
               designation: employee.designation || '',
               gender: employee.gender || '',
-              course: employee.course || ''
+              course: employee.course || '',
+              image:employee.image || ''
             });
           }
         } catch (error) {
@@ -65,14 +66,7 @@ function EditEmployeePage() {
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value, type, checked } = e.target;
-        if (type === 'checkbox') {
-            const newCourses = checked 
-                ? [...employee.course, value]
-                : employee.course.filter(course => course !== value);
-            setEmployee({ ...employee, course: newCourses });
-        } else {
-            setEmployee({ ...employee, [name]: value });
-        }
+         setEmployee({ ...employee, [name]: value });  
   }
 
   return (
@@ -160,7 +154,7 @@ function EditEmployeePage() {
                               type="checkbox"
                               name="course"
                               value="MCA"
-                              checked={employee.course.includes('MCA')}
+                              checked={employee.course === "MCA"}
                               onChange={handleChange}
                           /> MCA
                       </label>
@@ -169,7 +163,7 @@ function EditEmployeePage() {
                               type="checkbox"
                               name="course"
                               value="BCA"
-                              checked={employee.course.includes('BCA')}
+                              checked={employee.course === "BCA"}
                               onChange={handleChange}
                           /> BCA
                       </label>
@@ -178,11 +172,22 @@ function EditEmployeePage() {
                               type="checkbox"
                               name="course"
                               value="BSC"
-                              checked={employee.course.includes('BSC')}
+                              checked={employee.course === "BSC"}
                               onChange={handleChange}
                           /> BSC
                       </label>
                   </div>
+              </div>
+              <div className={styles.formGroup}>
+                  <label className={styles.label}>Image URL:</label>
+                  <input
+                      type="text"
+                      name="image"
+                      className={styles.inputField}
+                      value={employee.image}
+                      onChange={handleChange}
+                      required
+                  />
               </div>
               <button type="submit" className={styles.button}>Update</button>
           </form>
